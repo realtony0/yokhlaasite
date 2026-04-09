@@ -8,51 +8,50 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Brand palette — mirror de l'app mobile
-        bg: '#080A0D',
-        surface: '#12141A',
-        card: '#1A1C20',
-        line: 'rgba(255,255,255,0.08)',
-        dim: '#4A5160',
-        dim2: '#2A2E35',
-        ink: '#F5F6F7',
+        // Pure monochrome — wearebrand.io style
+        bg: '#000000',
+        surface: '#0A0A0A',
+        card: '#111111',
+        line: 'rgba(255,255,255,0.12)',
+        'line-soft': 'rgba(255,255,255,0.06)',
+        ink: '#FFFFFF',
+        'ink-soft': 'rgba(255,255,255,0.72)',
+        dim: 'rgba(255,255,255,0.55)',
+        'dim-2': 'rgba(255,255,255,0.35)',
         accent: '#22C55E',
-        'accent-soft': 'rgba(34,197,94,0.08)',
-        'accent-border': 'rgba(34,197,94,0.2)',
-        danger: '#EF4444',
-        warning: '#FFB800',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['Inter', 'system-ui', 'sans-serif'],
+        body: ['"League Spartan"', 'Inter', 'system-ui', 'sans-serif'],
+        sans: ['"League Spartan"', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+      },
+      letterSpacing: {
+        tightest: '-0.05em',
+        tighter: '-0.035em',
       },
       animation: {
-        'fade-up': 'fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
-        'fade-in': 'fade-in 0.4s ease-out',
-        'pulse-soft': 'pulse-soft 2.5s ease-in-out infinite',
-        'shimmer': 'shimmer 2s linear infinite',
-        'float': 'float 6s ease-in-out infinite',
+        'fade-up': 'fade-up 1s cubic-bezier(0.16, 1, 0.3, 1)',
+        'fade-in': 'fade-in 0.8s ease-out',
+        'ken-burns': 'ken-burns 20s ease-out infinite alternate',
+        marquee: 'marquee 40s linear infinite',
       },
       keyframes: {
         'fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '0%': { opacity: '0', transform: 'translateY(32px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         'fade-in': {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        'pulse-soft': {
-          '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.02)' },
+        'ken-burns': {
+          '0%': { transform: 'scale(1) translate(0, 0)' },
+          '100%': { transform: 'scale(1.15) translate(-2%, -1%)' },
         },
-        shimmer: {
-          '0%': { transform: 'translateX(-100%)' },
-          '100%': { transform: 'translateX(100%)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-8px)' },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

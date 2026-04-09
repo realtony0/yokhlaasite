@@ -8,63 +8,55 @@ interface ScarcityBarProps {
 }
 
 export function ScarcityBar({ signedUp = 27, total = 50 }: ScarcityBarProps) {
-  const [ref, inView] = useInView<HTMLDivElement>({ once: true, threshold: 0.3 });
+  const [ref, inView] = useInView<HTMLDivElement>({ once: true, threshold: 0.25 });
   const percent = Math.min(100, Math.round((signedUp / total) * 100));
   const remaining = Math.max(0, total - signedUp);
 
   return (
-    <section className="relative py-8 border-y border-line bg-surface/60">
+    <section className="relative py-20 lg:py-24 border-t border-b border-line">
       <div ref={ref} className="container-site">
         <div className={`reveal ${inView ? 'in-view' : ''}`}>
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-            {/* Label */}
-            <div className="flex items-center gap-4">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-accent/30 blur-md animate-pulse-soft" />
-                <div className="relative h-11 w-11 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-                    <path d="M12 2v6m0 0l-3-3m3 3l3-3M5 12h14M5 16h14M5 20h14" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" />
-                  </svg>
+          <div className="grid lg:grid-cols-12 gap-8 items-end">
+            <div className="lg:col-span-5">
+              <div className="text-eyebrow mb-6">Offre limitée</div>
+              <h3 className="text-headline uppercase max-w-md">
+                Les 50 premiers<br />chauffeurs.
+              </h3>
+            </div>
+
+            <div className="lg:col-span-7 flex items-end gap-10 lg:gap-16 lg:justify-end">
+              <div>
+                <div className="text-eyebrow mb-3">Inscrits</div>
+                <div className="text-[clamp(3rem,6vw,5rem)] font-display font-extrabold leading-none tracking-tightest font-mono text-ink">
+                  {String(signedUp).padStart(2, '0')}
                 </div>
+              </div>
+              <div className="font-display text-[clamp(3rem,6vw,5rem)] leading-none text-ink/20 font-extralight">
+                /
               </div>
               <div>
-                <div className="text-[11px] uppercase tracking-[0.18em] text-accent font-semibold">
-                  Offre early-bird
-                </div>
-                <div className="text-[18px] font-bold text-ink">
-                  Les 50 premiers chauffeurs
+                <div className="text-eyebrow mb-3">Total</div>
+                <div className="text-[clamp(3rem,6vw,5rem)] font-display font-extrabold leading-none tracking-tightest font-mono text-ink/30">
+                  {total}
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Progress */}
-            <div className="flex-1 max-w-lg">
-              <div className="flex items-baseline justify-between mb-2">
-                <span className="text-[12px] text-dim">Places réservées</span>
-                <span className="text-[14px] font-mono font-semibold text-ink">
-                  <span className="text-accent">{signedUp}</span>
-                  <span className="text-dim"> / {total}</span>
-                </span>
-              </div>
-              <div className="relative h-2 rounded-full bg-surface overflow-hidden">
-                <div
-                  className="absolute inset-y-0 left-0 bg-gradient-to-r from-accent to-accent/70 rounded-full transition-all duration-1000"
-                  style={{ width: inView ? `${percent}%` : '0%' }}
-                />
-                <div
-                  className="absolute inset-y-0 left-0 rounded-full opacity-30 blur-sm bg-accent transition-all duration-1000"
-                  style={{ width: inView ? `${percent}%` : '0%' }}
-                />
-              </div>
+          {/* Progress */}
+          <div className="mt-16">
+            <div className="relative h-[2px] bg-white/10">
+              <div
+                className="absolute inset-y-0 left-0 bg-white transition-all duration-[1500ms] ease-out"
+                style={{ width: inView ? `${percent}%` : '0%' }}
+              />
             </div>
-
-            {/* Remaining callout */}
-            <div className="text-right">
-              <div className="text-[11px] uppercase tracking-[0.18em] text-dim">Il reste</div>
-              <div className="text-[32px] font-bold font-mono leading-none text-ink">
-                {remaining}
-                <span className="text-[14px] text-dim font-sans font-semibold ml-1">places</span>
-              </div>
+            <div className="mt-5 flex items-baseline justify-between text-[11px] uppercase tracking-[0.18em] text-dim">
+              <span className="font-mono">{percent} % complet</span>
+              <span>
+                <span className="text-ink font-mono">{String(remaining).padStart(2, '0')}</span>
+                <span className="ml-2">places restantes</span>
+              </span>
             </div>
           </div>
         </div>

@@ -2,42 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ==========================================================================
-   Design tokens
-   ========================================================================== */
+/* Design tokens — pure monochrome editorial */
 :root {
-  --bg: #080a0d;
-  --surface: #12141a;
-  --card: #1a1c20;
-  --line: rgba(255, 255, 255, 0.08);
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --card: #111111;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-soft: rgba(255, 255, 255, 0.06);
+  --ink: #ffffff;
+  --dim: rgba(255, 255, 255, 0.55);
   --accent: #22c55e;
-  --accent-glow: rgba(34, 197, 94, 0.25);
-  --ink: #f5f6f7;
-  --dim: #4a5160;
-  --dim-2: #2a2e35;
 }
 
-/* ==========================================================================
-   Base
-   ========================================================================== */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 100px;
 }
 
 body {
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
-  font-feature-settings: 'cv11', 'ss01', 'ss03';
+  font-family: 'League Spartan', 'Inter', system-ui, sans-serif;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--ink);
+  font-feature-settings: 'ss01', 'cv11';
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -45,35 +44,47 @@ body {
   }
 }
 
-/* ==========================================================================
-   Typography — responsive via clamp()
-   ========================================================================== */
+/* ========== Editorial typography (wearebrand.io style) ========== */
+
 .text-display {
-  font-size: clamp(3rem, 8vw, 7rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 800;
+  font-size: clamp(3.25rem, 9.5vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
 }
 
 .text-display-sm {
-  font-size: clamp(2rem, 5vw, 4rem);
-  line-height: 1.05;
-  letter-spacing: -0.03em;
+  font-family: 'Inter', system-ui, sans-serif;
   font-weight: 800;
+  font-size: clamp(2.25rem, 6.5vw, 5rem);
+  line-height: 0.92;
+  letter-spacing: -0.04em;
 }
 
 .text-headline {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  font-weight: 700;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
 }
 
 .text-subhead {
-  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  font-family: 'League Spartan', 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: clamp(1.125rem, 1.35vw, 1.25rem);
   line-height: 1.55;
-  color: var(--ink);
-  opacity: 0.72;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.text-eyebrow {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.55);
 }
 
 .font-mono {
@@ -81,101 +92,168 @@ body {
   font-variant-numeric: tabular-nums;
 }
 
-/* ==========================================================================
-   Atmosphere
-   ========================================================================== */
-.noise {
-  position: relative;
+/* ========== Buttons ========== */
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 18px 36px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: transparent;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  white-space: nowrap;
 }
-.noise::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+.btn-outline:hover:not(:disabled) {
+  border-color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-1px);
 }
 
-.glow-hero {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(34, 197, 94, 0.18) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 30% at 30% 40%, rgba(34, 197, 94, 0.08) 0%, transparent 50%);
+.btn-solid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 18px 36px;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-solid:hover:not(:disabled) {
+  background: transparent;
+  color: #fff;
+  transform: translateY(-1px);
 }
 
-.grid-lines {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 75%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 75%);
+.btn-solid:disabled,
+.btn-outline:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
-/* ==========================================================================
-   Buttons — reusable patterns
-   ========================================================================== */
-.btn-base {
-  @apply inline-flex items-center justify-center gap-2 font-semibold transition-all duration-200 select-none whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
-}
+/* ========== Scroll reveal ========== */
 
-/* ==========================================================================
-   Scroll reveal
-   ========================================================================== */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(48px);
+  transition:
+    opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal.in-view {
   opacity: 1;
   transform: translateY(0);
 }
-.reveal-delay-1 { transition-delay: 80ms; }
-.reveal-delay-2 { transition-delay: 160ms; }
-.reveal-delay-3 { transition-delay: 240ms; }
-.reveal-delay-4 { transition-delay: 320ms; }
+.reveal-delay-1 { transition-delay: 120ms; }
+.reveal-delay-2 { transition-delay: 240ms; }
+.reveal-delay-3 { transition-delay: 360ms; }
+.reveal-delay-4 { transition-delay: 480ms; }
 
-/* ==========================================================================
-   Section container
-   ========================================================================== */
+/* ========== Containers ========== */
+
 .container-site {
-  max-width: 1240px;
+  max-width: 1440px;
   margin-inline: auto;
-  padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  padding-inline: clamp(1.5rem, 4vw, 3rem);
 }
 
-/* ==========================================================================
-   Custom scrollbar
-   ========================================================================== */
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+.container-narrow {
+  max-width: 1080px;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 4vw, 3rem);
 }
-::-webkit-scrollbar-track {
-  background: var(--bg);
+
+/* ========== Hero background — Ken Burns ========== */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 65%, rgba(0, 0, 0, 1) 100%),
+    radial-gradient(ellipse at 50% 40%, #1a1a1a 0%, #000 70%);
+  animation: ken-burns 22s ease-out infinite alternate;
 }
+
+/* ========== Form inputs — bottom-border only ========== */
+
+.input-line {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  padding: 18px 0;
+  font-size: 18px;
+  font-weight: 300;
+  color: #fff;
+  font-family: 'League Spartan', sans-serif;
+  transition: border-color 300ms;
+}
+.input-line::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+}
+.input-line:focus {
+  outline: none;
+  border-bottom-color: #fff;
+}
+.input-line:disabled {
+  opacity: 0.5;
+}
+select.input-line {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 30px;
+  cursor: pointer;
+}
+select.input-line option {
+  background: #000;
+  color: #fff;
+}
+
+/* ========== Scrollbar ========== */
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #000; }
 ::-webkit-scrollbar-thumb {
-  background: var(--dim-2);
-  border-radius: 5px;
-  border: 2px solid var(--bg);
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--dim);
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
+
+/* ========== Focus ========== */
+
+:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 4px;
 }
 
-/* ==========================================================================
-   Accessible focus
-   ========================================================================== */
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 4px;
+/* ========== Utilities ========== */
+
+.hairline {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  width: 100%;
 }

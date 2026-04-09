@@ -12,76 +12,66 @@ interface Step {
 const steps: Step[] = [
   {
     num: '01',
-    title: 'Inscris-toi sur la liste',
+    title: 'Inscription',
     description:
-      "Remplis le formulaire en bas de page avec ton nom, ton téléphone et les infos de ton véhicule. 2 minutes chrono.",
-    eta: '~ 2 min',
+      "Remplissez le formulaire avec vos coordonnées et les informations de votre véhicule. Deux minutes suffisent.",
+    eta: '02 min',
   },
   {
     num: '02',
-    title: 'Valide tes documents',
+    title: 'Vérification',
     description:
-      "On te contacte pour la vérification : CNI, permis de conduire, carte grise, assurance, photos du véhicule. Notre équipe valide sous 48h.",
-    eta: '~ 48 h',
+      "Notre équipe contrôle vos documents : identité, permis de conduire, carte grise, assurance. Validation sous 48 heures.",
+    eta: '48 h',
   },
   {
     num: '03',
-    title: 'Commence à gagner',
+    title: 'Mise en service',
     description:
-      "Télécharge l'app Yokh Laa Chauffeur, passe en ligne, et garde 100% de ce que tu gagnes. Ton 1er mois d'abonnement est offert.",
+      "Téléchargez l'application Yokh Laa Chauffeur, activez votre compte et commencez à recevoir des courses. Premier mois offert.",
     eta: 'Jour J',
   },
 ];
 
 export function HowItWorks() {
-  const [ref, inView] = useInView<HTMLDivElement>({ once: true, threshold: 0.1 });
+  const [ref, inView] = useInView<HTMLDivElement>({ once: true, threshold: 0.05 });
 
   return (
-    <section ref={ref} className="relative py-28 lg:py-40 bg-surface/40 border-y border-line">
+    <section ref={ref} className="relative py-32 lg:py-48 border-t border-line">
       <div className="container-site">
-        <div className={`reveal ${inView ? 'in-view' : ''} max-w-2xl mb-16`}>
-          <div className="text-[12px] uppercase tracking-[0.2em] text-accent font-semibold mb-4">
-            Comment ça marche
-          </div>
-          <h2 className="text-display-sm">
-            Trois étapes.
-            <br />
-            <span className="text-dim">C'est tout.</span>
+        <div className={`reveal ${inView ? 'in-view' : ''} mb-24 lg:mb-36 max-w-4xl`}>
+          <div className="text-eyebrow mb-6">Processus</div>
+          <h2 className="text-display-sm uppercase">
+            Trois étapes.<br />
+            <span className="italic font-extralight">Rien de plus.</span>
           </h2>
         </div>
 
-        <div className="relative">
-          {/* Connecting line */}
-          <div className="hidden md:block absolute top-[68px] left-[8%] right-[8%] h-px bg-gradient-to-r from-transparent via-line to-transparent" />
-
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-10 relative">
-            {steps.map((step, i) => (
-              <div
-                key={step.num}
-                className={`reveal reveal-delay-${i + 1} ${inView ? 'in-view' : ''}`}
-              >
-                <div className="relative">
-                  {/* Big num */}
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="relative">
-                      <div className="h-14 w-14 rounded-full bg-bg border border-line flex items-center justify-center">
-                        <span className="text-[17px] font-bold font-mono text-accent">
-                          {step.num}
-                        </span>
-                      </div>
-                    </div>
-                    <span className="text-[11px] uppercase tracking-wider text-dim font-mono">
-                      {step.eta}
-                    </span>
-                  </div>
-
-                  {/* Content */}
-                  <h3 className="text-[22px] font-bold text-ink mb-3 leading-tight">{step.title}</h3>
-                  <p className="text-[14px] leading-relaxed text-dim">{step.description}</p>
+        <div className="space-y-20 lg:space-y-28">
+          {steps.map((step, i) => (
+            <div
+              key={step.num}
+              className={`reveal reveal-delay-${i + 1} ${inView ? 'in-view' : ''}`}
+            >
+              <div className="hairline mb-12" />
+              <div className="grid lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-1">
+                  <div className="text-eyebrow font-mono">{step.num}</div>
+                </div>
+                <div className="lg:col-span-4">
+                  <h3 className="text-headline uppercase">{step.title}</h3>
+                </div>
+                <div className="lg:col-span-4">
+                  <p className="text-[16px] leading-[1.75] font-light text-ink/70 max-w-md">
+                    {step.description}
+                  </p>
+                </div>
+                <div className="lg:col-span-3 lg:text-right">
+                  <div className="text-eyebrow font-mono">{step.eta}</div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
