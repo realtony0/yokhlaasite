@@ -56,8 +56,8 @@ export function Footer() {
               links={[
                 ['#', 'À propos'],
                 ['#', 'Équipe'],
-                ['mailto:contact@yokhlaa.com', 'Contact'],
-                ['mailto:press@yokhlaa.com', 'Presse'],
+                ['mailto:contact@yokhlaa.app', 'Contact'],
+                ['mailto:press@yokhlaa.app', 'Presse'],
               ]}
             />
             <FooterCol

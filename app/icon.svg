@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Black rounded background -->
+  <rect width="32" height="32" rx="7" fill="#000000"/>
+  <!-- Bold Y letter made of two strokes -->
+  <path
+    d="M 7 7 L 16 17 L 25 7 M 16 17 L 16 25"
+    stroke="#FFFFFF"
+    stroke-width="3.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    fill="none"
+  />
+  <!-- Green accent dot — signature "point" of the brand -->
+  <circle cx="25.5" cy="25.5" r="2.3" fill="#22C55E"/>
+</svg>

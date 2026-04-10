@@ -277,10 +277,10 @@ function SiteEnd() {
             <span>© {new Date().getFullYear()} Yokh Laa · Dakar, Sénégal</span>
           </div>
           <a
-            href="mailto:contact@yokhlaa.com"
+            href="mailto:contact@yokhlaa.app"
             className="hover:text-accent transition-colors"
           >
-            contact@yokhlaa.com
+            contact@yokhlaa.app
           </a>
         </div>
       </div>

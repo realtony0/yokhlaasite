@@ -170,10 +170,10 @@ export function FAQ() {
               Réponse sous 24 heures.
             </p>
             <a
-              href="mailto:contact@yokhlaa.com"
+              href="mailto:contact@yokhlaa.app"
               className="inline-flex items-center gap-2 mt-8 text-[13px] uppercase tracking-[0.18em] text-ink font-medium border-b border-ink/40 hover:border-ink pb-1 transition-colors"
             >
-              contact@yokhlaa.com
+              contact@yokhlaa.app
               <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden>
                 <path
                   d="M3 8h10m-4-4l4 4-4 4"
