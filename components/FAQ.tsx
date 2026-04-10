@@ -85,17 +85,6 @@ const items: QA[] = [
       </>
     ),
   },
-  {
-    q: "Quand l'application sera-t-elle disponible ?",
-    a: (
-      <>
-        Le lancement officiel est prévu au{' '}
-        <strong className="text-ink font-medium">premier semestre 2026 à Dakar</strong>.
-        Les inscrits bénéficient d'un accès prioritaire à la bêta privée et
-        figurent parmi les premiers à recevoir des courses dès l'ouverture.
-      </>
-    ),
-  },
 ];
 
 function AccordionItem({
