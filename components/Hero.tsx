@@ -70,12 +70,15 @@ export function Hero() {
               >
                 <div className="hairline mb-4 md:mb-8" />
                 <p className="text-[14px] md:text-[16px] leading-[1.6] font-light text-white/85 mb-5 md:mb-8">
-                  Le premier service de transport sans commission au Sénégal.
-                  Abonnement fixe{' '}
+                  Le premier service de transport sans commission au Sénégal.{' '}
                   <span className="font-mono text-accent whitespace-nowrap">
-                    18&thinsp;500&thinsp;FCFA
+                    15&thinsp;000&thinsp;FCFA
                   </span>{' '}
-                  par mois. Aucun prélèvement sur les courses.
+                  par mois à vie pour les 50 premiers chauffeurs (au lieu de{' '}
+                  <span className="font-mono whitespace-nowrap line-through text-white/40">
+                    20&thinsp;000&thinsp;FCFA
+                  </span>
+                  ).
                 </p>
 
                 <div className="flex flex-col gap-3">
@@ -100,7 +103,7 @@ export function Hero() {
         <div className="pb-24 md:pb-12 container-site hidden md:block">
           <div className="hairline mb-5" />
           <div className="grid grid-cols-2 gap-y-4 gap-x-6 text-white/80">
-            <MetaItem eyebrow="Abonnement" value="18 500 FCFA" mono />
+            <MetaItem eyebrow="50 premiers" value="15 000 FCFA" mono />
             <MetaItem eyebrow="Commission" value="0 %" mono />
           </div>
         </div>

@@ -18,8 +18,9 @@ export function Footer() {
           <div className="md:col-span-5">
             <p className="text-[15px] leading-[1.7] font-light text-ink/70 max-w-md">
               Le premier service de transport sans commission à Dakar.
-              Aucun prélèvement sur les courses. Abonnement fixe de
-              18&nbsp;500&nbsp;FCFA par mois.
+              Aucun prélèvement sur les courses.{' '}
+              <span className="text-accent font-medium">15&nbsp;000&nbsp;FCFA</span>{' '}
+              par mois à vie pour les 50 premiers chauffeurs.
             </p>
             <div className="flex items-center gap-3 mt-10">
               <SocialLink href="https://wa.me/221" label="WhatsApp">

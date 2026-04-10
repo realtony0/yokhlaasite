@@ -13,8 +13,11 @@ const items: QA[] = [
     q: "Comment fonctionne l'abonnement mensuel ?",
     a: (
       <>
-        Le paiement de <strong className="text-ink font-medium">18&nbsp;500&nbsp;FCFA</strong>{' '}
-        s'effectue au début de chaque mois via Wave, Orange Money ou Free Money.
+        Le prix normal est de{' '}
+        <strong className="text-ink font-medium">20&nbsp;000&nbsp;FCFA</strong>{' '}
+        par mois, mais les 50 premiers chauffeurs inscrits paient{' '}
+        <strong className="text-accent font-medium">15&nbsp;000&nbsp;FCFA</strong>{' '}
+        à vie. Paiement en début de mois via Wave, Orange Money ou Free Money.
         Aucune commission, aucun frais caché. Résiliation possible à tout
         moment — l'abonnement prend fin à l'issue du mois en cours, sans
         engagement ni pénalité.
@@ -76,8 +79,9 @@ const items: QA[] = [
         accompagner individuellement : formation, assistance, retours
         produit. Les 50 premiers chauffeurs bénéficient du{' '}
         <strong className="text-ink font-medium">premier mois offert</strong> et du{' '}
-        <strong className="text-ink font-medium">tarif garanti à vie à 18&nbsp;500&nbsp;FCFA</strong>,
-        même lors des futures révisions tarifaires.
+        <strong className="text-accent font-medium">tarif à vie de 15&nbsp;000&nbsp;FCFA</strong>
+        {' '}au lieu de 20&nbsp;000&nbsp;FCFA, même lors des futures révisions
+        tarifaires.
       </>
     ),
   },

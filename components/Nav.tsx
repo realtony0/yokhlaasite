@@ -78,7 +78,7 @@ export function Nav() {
               className="hidden md:inline-flex btn-outline"
               style={{ padding: '12px 24px', fontSize: '10px' }}
             >
-              Réserver
+              M&rsquo;inscrire
             </a>
             <button
               className="lg:hidden h-10 w-10 inline-flex items-center justify-center text-ink"
@@ -109,7 +109,7 @@ export function Nav() {
               ['#avantages', 'Avantages'],
               ['#comment', 'Comment ça marche'],
               ['#faq', 'FAQ'],
-              ['#inscription', 'Réserver une place'],
+              ['#inscription', 'M\u2019inscrire'],
             ].map(([href, label]) => (
               <a
                 key={href}

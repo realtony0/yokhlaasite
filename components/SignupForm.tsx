@@ -106,8 +106,9 @@ export function SignupForm() {
             <span className="italic font-extralight">une place.</span>
           </h2>
           <p className="text-subhead mt-8 max-w-lg mx-auto">
-            Premier mois offert · Tarif garanti à vie à 18 500 FCFA par mois.
-            Deux minutes d'inscription.
+            Premier mois offert · Tarif à vie à{' '}
+            <span className="text-accent font-medium">15 000 FCFA</span>{' '}
+            par mois (au lieu de 20 000). Deux minutes d&rsquo;inscription.
           </p>
         </div>
 
@@ -235,7 +236,7 @@ export function SignupForm() {
                   </>
                 ) : (
                   <>
-                    Réserver ma place
+                    M&rsquo;inscrire
                     <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
                       <path
                         d="M3 8h10m-4-4l4 4-4 4"

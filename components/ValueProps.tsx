@@ -23,9 +23,9 @@ const props: Prop[] = [
     index: '02',
     title: 'Abonnement fixe',
     description:
-      "Un forfait mensuel unique et transparent. Courses illimitées, chat passager, tableau de bord analytique, support prioritaire. Aucun frais caché, aucun palier, aucune augmentation dissimulée.",
-    figure: '18 500',
-    figureSuffix: 'FCFA / mois',
+      "Un forfait mensuel unique et transparent. Courses illimitées, chat passager, tableau de bord analytique, support prioritaire. Prix normal 20 000 FCFA, mais les 50 premiers chauffeurs paient 15 000 FCFA à vie — soit 25 % d'économie, chaque mois, sans date de fin.",
+    figure: '15 000',
+    figureSuffix: 'FCFA / mois · 50 premiers',
   },
   {
     index: '03',
