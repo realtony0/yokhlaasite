@@ -69,7 +69,7 @@ export function Hero() {
                 }`}
               >
                 <div className="hairline mb-4 md:mb-8" />
-                <p className="text-[14px] md:text-[16px] leading-[1.6] font-light text-white/85 mb-5 md:mb-8">
+                <p className="text-[14px] md:text-[16px] leading-[1.6] font-medium text-white/90 mb-5 md:mb-8">
                   Le premier service de transport sans commission au Sénégal.{' '}
                   <span className="font-mono text-accent whitespace-nowrap">
                     15&thinsp;000&thinsp;FCFA
