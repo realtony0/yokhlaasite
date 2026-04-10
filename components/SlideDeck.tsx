@@ -257,7 +257,8 @@ function SlideControls() {
             style={{
               width: '2px',
               height: i === active ? '32px' : '12px',
-              backgroundColor: i === active ? '#fff' : 'rgba(255,255,255,0.25)',
+              backgroundColor: i === active ? '#22c55e' : 'rgba(255,255,255,0.25)',
+              boxShadow: i === active ? '0 0 12px rgba(34, 197, 94, 0.5)' : 'none',
             }}
           />
         ))}

@@ -64,7 +64,7 @@ export function Hero() {
                 Conduire.
                 <br />
                 <span className="italic font-light">Garder</span>{' '}
-                <span className="whitespace-nowrap">100&nbsp;%</span>
+                <span className="whitespace-nowrap text-accent">100&nbsp;%</span>
                 <br />
                 des gains.
               </h1>

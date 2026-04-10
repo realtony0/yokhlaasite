@@ -272,8 +272,8 @@ export function HeroScene({ progressRef }: Props) {
 
         {/* Pickup point */}
         <g>
-          <circle cx="120" cy="900" r="7" fill="#ffa86b" className="hero-pulse" />
-          <circle cx="120" cy="900" r="20" fill="none" stroke="#ffa86b" strokeWidth="1.4" opacity="0.5" className="hero-ring" />
+          <circle cx="120" cy="900" r="7" fill="#22c55e" className="hero-pulse" />
+          <circle cx="120" cy="900" r="20" fill="none" stroke="#22c55e" strokeWidth="1.4" opacity="0.6" className="hero-ring" />
         </g>
         {/* Dropoff point */}
         <g>
