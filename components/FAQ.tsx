@@ -113,7 +113,7 @@ function AccordionItem({
         aria-expanded={isOpen}
       >
         <div className="flex items-start gap-8 flex-1">
-          <span className="text-eyebrow font-mono shrink-0 mt-2">
+          <span className="text-eyebrow font-mono shrink-0 mt-2 text-accent">
             {String(index + 1).padStart(2, '0')}
           </span>
           <h3

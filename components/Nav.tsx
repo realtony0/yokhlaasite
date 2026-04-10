@@ -3,21 +3,43 @@
 import { useEffect, useState } from 'react';
 
 export function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
+  // Watch the active slide's internal scroll (SlideDeck locks body scroll
+  // so window.scrollY stays at 0). When any active slide scrolls > 40px
+  // inside, add the backdrop so content doesn't bleed through the nav.
+  const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const checkScroll = () => {
+      const scrollers = document.querySelectorAll<HTMLElement>(
+        'section[aria-hidden="false"] > .absolute.inset-0.overflow-y-auto'
+      );
+      let max = 0;
+      scrollers.forEach((s) => {
+        if (s.scrollTop > max) max = s.scrollTop;
+      });
+      setScrolled(max > 40);
+    };
+    checkScroll();
+    // Listen globally — any scroll event will bubble up via capture
+    document.addEventListener('scroll', checkScroll, { capture: true, passive: true });
+    // Also when the slide changes (hashchange signals slide change)
+    window.addEventListener('hashchange', () => {
+      // next frame to let the new slide take effect
+      requestAnimationFrame(checkScroll);
+    });
+    return () => {
+      document.removeEventListener('scroll', checkScroll, { capture: true });
+    };
   }, []);
 
   return (
     <>
       <header
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-black/50 backdrop-blur-xl' : 'bg-transparent'
+          scrolled
+            ? 'bg-black/70 backdrop-blur-xl border-b border-line'
+            : 'bg-gradient-to-b from-black/50 via-black/20 to-transparent'
         }`}
       >
         <div className="container-site flex items-center justify-between h-[84px]">

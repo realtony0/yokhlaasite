@@ -158,19 +158,42 @@ export function SlideDeck({ children, slideIds }: SlideDeckProps) {
     return () => window.removeEventListener('wheel', onWheel);
   }, [next, prev]);
 
-  // Touch swipe
+  // Touch swipe — only trigger slide change when the user cannot scroll
+  // further inside the active slide (same logic as the wheel handler).
   useEffect(() => {
     let startY = 0;
     let startTime = 0;
+    let startTarget: HTMLElement | null = null;
     const onTouchStart = (e: TouchEvent) => {
       startY = e.touches[0].clientY;
       startTime = Date.now();
+      startTarget = e.target as HTMLElement | null;
     };
     const onTouchEnd = (e: TouchEvent) => {
       const endY = e.changedTouches[0].clientY;
       const dy = startY - endY;
       const dt = Date.now() - startTime;
-      if (Math.abs(dy) < 50 || dt > 600) return;
+      if (Math.abs(dy) < 60 || dt > 600) return;
+
+      // If the swipe happened inside a scrollable area that still has room
+      // to scroll in the swipe direction, let the native scroll handle it
+      // and do NOT change slide.
+      let target: HTMLElement | null = startTarget;
+      while (target && target !== document.body) {
+        const overflow = window.getComputedStyle(target).overflowY;
+        const isScrollable = overflow === 'auto' || overflow === 'scroll';
+        if (isScrollable && target.scrollHeight > target.clientHeight) {
+          const atTop = target.scrollTop <= 0;
+          const atBottom =
+            target.scrollTop + target.clientHeight >= target.scrollHeight - 1;
+          if ((dy > 0 && !atBottom) || (dy < 0 && !atTop)) {
+            return; // native scroll handled it
+          }
+          break;
+        }
+        target = target.parentElement;
+      }
+
       if (dy > 0) next();
       else prev();
     };

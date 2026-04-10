@@ -72,27 +72,31 @@ export function SignupForm() {
 
   if (status === 'success') {
     return (
-      <section id="inscription" className="relative section-pad border-t border-line">
-        <div className="container-narrow text-center">
-          <div className="text-eyebrow mb-6">Confirmation</div>
-          <h2 className="text-display-sm uppercase mb-10">
-            Inscription<br />
-            <span className="italic font-extralight">confirmée.</span>
-          </h2>
-          <p className="text-subhead max-w-xl mx-auto mb-12">
-            Votre place parmi les 50 premiers chauffeurs est réservée. Notre
-            équipe prendra contact sous 48 heures pour la validation des
-            documents et l'activation du premier mois offert.
-          </p>
-          <a href="#top" className="btn-outline">
-            Retour en haut
-          </a>
-        </div>
-      </section>
+      <>
+        <section id="inscription" className="relative section-pad border-t border-line">
+          <div className="container-narrow text-center">
+            <div className="text-eyebrow mb-6">Confirmation</div>
+            <h2 className="text-display-sm uppercase mb-10">
+              Inscription<br />
+              <span className="italic font-extralight">confirmée.</span>
+            </h2>
+            <p className="text-subhead max-w-xl mx-auto mb-12">
+              Votre place parmi les 50 premiers chauffeurs est réservée. Notre
+              équipe prendra contact sous 48 heures pour la validation des
+              documents et l'activation du premier mois offert.
+            </p>
+            <a href="#top" className="btn-outline">
+              Retour en haut
+            </a>
+          </div>
+        </section>
+        <SiteEnd />
+      </>
     );
   }
 
   return (
+    <>
     <section id="inscription" ref={ref} className="relative section-pad border-t border-line">
       <div className="container-narrow relative">
         <div className={`reveal ${inView ? 'in-view' : ''} text-center mb-20 lg:mb-24`}>
@@ -252,6 +256,35 @@ export function SignupForm() {
         </div>
       </div>
     </section>
+    <SiteEnd />
+    </>
+  );
+}
+
+function SiteEnd() {
+  return (
+    <footer className="relative mt-16 md:mt-24 border-t border-line">
+      <div className="container-site py-10 md:py-14">
+        <div
+          className="text-[clamp(2.75rem,10vw,6rem)] font-extrabold leading-[0.85] uppercase text-ink/90"
+          style={{ fontFamily: 'Inter, sans-serif', letterSpacing: '-0.045em' }}
+        >
+          YOKH LAA<span className="text-accent">.</span>
+        </div>
+        <div className="mt-8 md:mt-10 flex flex-col md:flex-row md:items-center justify-between gap-4 text-[11px] uppercase tracking-[0.18em] text-ink/40 font-mono">
+          <div className="flex items-center gap-3">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-accent" />
+            <span>© {new Date().getFullYear()} Yokh Laa · Dakar, Sénégal</span>
+          </div>
+          <a
+            href="mailto:contact@yokhlaa.com"
+            className="hover:text-accent transition-colors"
+          >
+            contact@yokhlaa.com
+          </a>
+        </div>
+      </div>
+    </footer>
   );
 }
 

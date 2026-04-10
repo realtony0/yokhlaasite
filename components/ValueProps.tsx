@@ -62,7 +62,7 @@ export function ValueProps() {
               <div className="hairline mb-12" />
               <div className="grid lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-1">
-                  <div className="text-eyebrow font-mono">{p.index}</div>
+                  <div className="text-eyebrow font-mono text-accent">{p.index}</div>
                 </div>
 
                 <div className="lg:col-span-4">
@@ -77,7 +77,7 @@ export function ValueProps() {
 
                 <div className="lg:col-span-3 lg:text-right">
                   <div className="inline-flex flex-col lg:items-end">
-                    <div className="font-display text-[clamp(3rem,5.5vw,4.5rem)] font-extrabold leading-[0.9] tracking-tightest text-ink font-mono">
+                    <div className="font-display text-[clamp(3rem,5.5vw,4.5rem)] font-extrabold leading-[0.9] tracking-tightest text-accent font-mono">
                       {p.figure}
                     </div>
                     {p.figureSuffix && (

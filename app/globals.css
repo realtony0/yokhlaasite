@@ -271,12 +271,12 @@ body {
 /* Mobile-first display tweaks */
 @media (max-width: 640px) {
   .text-display {
-    font-size: clamp(2.75rem, 14vw, 4.5rem);
-    line-height: 0.92;
-    letter-spacing: -0.04em;
+    font-size: clamp(2.25rem, 11.5vw, 3.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
   }
   .text-display-sm {
-    font-size: clamp(2rem, 10vw, 3rem);
+    font-size: clamp(1.875rem, 9vw, 2.75rem);
     line-height: 0.95;
   }
   .text-headline {

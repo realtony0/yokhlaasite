@@ -42,10 +42,10 @@ export function Hero() {
       />
 
       <div className="absolute inset-0 z-20 flex flex-col">
-        <div className="pt-28 md:pt-36" />
+        <div className="pt-24 md:pt-36" />
 
         <div className="flex-1 container-site flex items-center">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 w-full items-center">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-10 w-full items-center">
             <div className="lg:col-span-8">
               <h1
                 className={`text-display uppercase transition-all duration-1000 delay-150 ${
@@ -68,11 +68,11 @@ export function Hero() {
                   mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                 }`}
               >
-                <div className="hairline mb-6 md:mb-8" />
-                <p className="text-[15px] md:text-[16px] leading-[1.65] font-light text-white/85 mb-6 md:mb-8">
+                <div className="hairline mb-4 md:mb-8" />
+                <p className="text-[14px] md:text-[16px] leading-[1.6] font-light text-white/85 mb-5 md:mb-8">
                   Le premier service de transport sans commission au Sénégal.
                   Abonnement fixe{' '}
-                  <span className="font-mono text-white whitespace-nowrap">
+                  <span className="font-mono text-accent whitespace-nowrap">
                     18&thinsp;500&thinsp;FCFA
                   </span>{' '}
                   par mois. Aucun prélèvement sur les courses.
@@ -97,7 +97,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="pb-24 md:pb-12 container-site">
+        <div className="pb-24 md:pb-12 container-site hidden md:block">
           <div className="hairline mb-5" />
           <div className="grid grid-cols-2 gap-y-4 gap-x-6 text-white/80">
             <MetaItem eyebrow="Abonnement" value="18 500 FCFA" mono />

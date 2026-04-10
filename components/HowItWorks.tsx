@@ -56,7 +56,7 @@ export function HowItWorks() {
               <div className="hairline mb-12" />
               <div className="grid lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-1">
-                  <div className="text-eyebrow font-mono">{step.num}</div>
+                  <div className="text-eyebrow font-mono text-accent">{step.num}</div>
                 </div>
                 <div className="lg:col-span-4">
                   <h3 className="text-headline uppercase">{step.title}</h3>
@@ -67,7 +67,7 @@ export function HowItWorks() {
                   </p>
                 </div>
                 <div className="lg:col-span-3 lg:text-right">
-                  <div className="text-eyebrow font-mono">{step.eta}</div>
+                  <div className="text-eyebrow font-mono text-accent/80">{step.eta}</div>
                 </div>
               </div>
             </div>
