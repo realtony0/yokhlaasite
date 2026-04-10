@@ -348,3 +348,90 @@ select.input-line option {
   border: none;
   width: 100%;
 }
+
+/* ========== Legal / prose typography ========== */
+
+.prose-legal {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: 'League Spartan', 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.75;
+  max-width: 760px;
+}
+.prose-legal section {
+  margin-top: 3.5rem;
+}
+.prose-legal section:first-of-type {
+  margin-top: 0;
+}
+.prose-legal h2 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+  line-height: 1.25;
+}
+.prose-legal h3 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+.prose-legal p {
+  margin-bottom: 1.1rem;
+}
+.prose-legal ul {
+  margin: 1rem 0 1.5rem 0;
+  padding-left: 1.25rem;
+  list-style: none;
+}
+.prose-legal ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.prose-legal ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.72rem;
+  width: 8px;
+  height: 1px;
+  background: rgba(34, 197, 94, 0.7);
+}
+.prose-legal ul ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.prose-legal strong {
+  color: #fff;
+  font-weight: 500;
+}
+.prose-legal a {
+  color: #22c55e;
+  border-bottom: 1px solid rgba(34, 197, 94, 0.35);
+  transition: border-color 200ms, color 200ms;
+}
+.prose-legal a:hover {
+  border-bottom-color: #22c55e;
+}
+.prose-legal sup {
+  font-size: 0.65em;
+  vertical-align: super;
+  line-height: 0;
+}
+
+@media (max-width: 640px) {
+  .prose-legal {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .prose-legal section {
+    margin-top: 2.75rem;
+  }
+}

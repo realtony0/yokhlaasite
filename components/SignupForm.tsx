@@ -1,8 +1,10 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
+import Link from 'next/link';
 import { useInView } from '@/lib/useInView';
 import { submitWaitlistEntry } from '@/lib/supabase';
+import { Footer } from './Footer';
 
 const ZONES = [
   'Dakar Plateau',
@@ -72,27 +74,31 @@ export function SignupForm() {
 
   if (status === 'success') {
     return (
-      <section id="inscription" className="relative section-pad border-t border-line">
-        <div className="container-narrow text-center">
-          <div className="text-eyebrow mb-6">Confirmation</div>
-          <h2 className="text-display-sm uppercase mb-10">
-            Inscription<br />
-            <span className="italic font-extralight">confirmée.</span>
-          </h2>
-          <p className="text-subhead max-w-xl mx-auto mb-12">
-            Votre place parmi les 50 premiers chauffeurs est réservée. Notre
-            équipe prendra contact sous 48 heures pour la validation des
-            documents et l'activation du premier mois offert.
-          </p>
-          <a href="#top" className="btn-outline">
-            Retour en haut
-          </a>
-        </div>
-      </section>
+      <>
+        <section id="inscription" className="relative section-pad border-t border-line">
+          <div className="container-narrow text-center">
+            <div className="text-eyebrow mb-6">Confirmation</div>
+            <h2 className="text-display-sm uppercase mb-10">
+              Inscription<br />
+              <span className="italic font-extralight">confirmée.</span>
+            </h2>
+            <p className="text-subhead max-w-xl mx-auto mb-12">
+              Votre place parmi les 50 premiers chauffeurs est réservée. Notre
+              équipe prendra contact sous 48 heures pour la validation des
+              documents et l'activation du premier mois offert.
+            </p>
+            <a href="#top" className="btn-outline">
+              Retour en haut
+            </a>
+          </div>
+        </section>
+        <Footer />
+      </>
     );
   }
 
   return (
+    <>
     <section id="inscription" ref={ref} className="relative section-pad border-t border-line">
       <div className="container-narrow relative">
         <div className={`reveal ${inView ? 'in-view' : ''} text-center mb-20 lg:mb-24`}>
@@ -201,13 +207,21 @@ export function SignupForm() {
                 <span className="text-[13px] leading-[1.7] text-ink/60 font-light">
                   J'accepte d'être contacté·e par l'équipe Yokh Laa et je prends
                   connaissance des{' '}
-                  <a href="#" className="text-ink border-b border-ink/30 hover:border-ink">
+                  <Link
+                    href="/conditions"
+                    target="_blank"
+                    className="text-ink border-b border-ink/30 hover:border-ink"
+                  >
                     conditions d'utilisation
-                  </a>{' '}
+                  </Link>{' '}
                   et de la{' '}
-                  <a href="#" className="text-ink border-b border-ink/30 hover:border-ink">
+                  <Link
+                    href="/confidentialite"
+                    target="_blank"
+                    className="text-ink border-b border-ink/30 hover:border-ink"
+                  >
                     politique de confidentialité
-                  </a>
+                  </Link>
                   .
                 </span>
               </label>
@@ -252,6 +266,8 @@ export function SignupForm() {
         </div>
       </div>
     </section>
+    <Footer />
+    </>
   );
 }
 
