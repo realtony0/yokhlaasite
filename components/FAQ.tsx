@@ -22,31 +22,6 @@ const items: QA[] = [
     ),
   },
   {
-    q: 'Quels documents sont requis ?',
-    a: (
-      <>
-        <ul className="space-y-2 list-none">
-          {[
-            "Carte nationale d'identité (recto et verso)",
-            'Permis de conduire (recto et verso)',
-            'Carte grise du véhicule',
-            "Certificat d'assurance à jour",
-            'Photographies du véhicule (quatre angles)',
-            'Casier judiciaire de moins de trois mois',
-          ].map((d) => (
-            <li key={d} className="flex items-start gap-3">
-              <span className="mt-2 h-[3px] w-3 bg-ink/60 shrink-0" aria-hidden />
-              <span>{d}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-5 text-[13px] text-ink/50">
-          Validation par notre équipe sous 48 heures.
-        </p>
-      </>
-    ),
-  },
-  {
     q: 'Comment les passagers paient-ils ?',
     a: (
       <>

@@ -60,7 +60,7 @@ export default function ConditionsPage() {
         <ul>
           <li>figurer parmi les 50 premiers chauffeurs inscrits sur la liste d&rsquo;attente au moment de la clôture du programme&nbsp;;</li>
           <li>fournir des informations exactes et actualisées au moment de l&rsquo;inscription&nbsp;;</li>
-          <li>répondre favorablement aux contrôles de vérification (pièce d&rsquo;identité, permis de conduire, carte grise, assurance) dans les délais impartis par Yokh Laa&nbsp;;</li>
+          <li>confirmer son intérêt lors de la prise de contact par l&rsquo;équipe Yokh Laa dans les délais impartis&nbsp;;</li>
           <li>activer le compte chauffeur dans l&rsquo;application mobile dans les trente (30) jours suivant la notification d&rsquo;acceptation.</li>
         </ul>
         <p className="text-ink/70">

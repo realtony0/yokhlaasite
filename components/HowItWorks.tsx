@@ -19,9 +19,9 @@ const steps: Step[] = [
   },
   {
     num: '02',
-    title: 'Vérification',
+    title: 'Confirmation',
     description:
-      "Notre équipe contrôle vos documents : identité, permis de conduire, carte grise, assurance. Validation sous 48 heures.",
+      "Notre équipe examine votre candidature et prend contact pour confirmer votre place parmi les 50 premiers chauffeurs. Réponse sous 48 heures.",
     eta: '48 h',
   },
   {
