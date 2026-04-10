@@ -84,8 +84,8 @@ export function SignupForm() {
             </h2>
             <p className="text-subhead max-w-xl mx-auto mb-12">
               Votre place parmi les 50 premiers chauffeurs est réservée. Notre
-              équipe prendra contact sous 48 heures pour finaliser votre
-              inscription et activer le premier mois offert.
+              équipe prendra contact sous 48 heures pour la validation des
+              documents et l'activation du premier mois offert.
             </p>
             <a href="#top" className="btn-outline">
               Retour en haut

@@ -63,7 +63,7 @@ export default function ConfidentialitePage() {
         <ul>
           <li><strong>Gestion de la liste d&rsquo;attente&nbsp;:</strong> inscription, validation, contact préalable au lancement&nbsp;;</li>
           <li><strong>Attribution de l&rsquo;offre «&nbsp;50 premiers chauffeurs&nbsp;»&nbsp;:</strong> premier mois d&rsquo;abonnement offert et tarif garanti à vie&nbsp;;</li>
-          <li><strong>Communication&nbsp;:</strong> envoi d&rsquo;informations sur l&rsquo;état du projet, la date de lancement et les prochaines étapes d&rsquo;inscription&nbsp;;</li>
+          <li><strong>Communication&nbsp;:</strong> envoi d&rsquo;informations sur l&rsquo;état du projet, la date de lancement et les étapes de vérification des documents&nbsp;;</li>
           <li><strong>Statistiques internes&nbsp;:</strong> mesure agrégée et anonyme de la demande par zone et type de véhicule.</li>
         </ul>
         <p>
