@@ -37,9 +37,9 @@ export function HowItWorks() {
   const [ref, inView] = useInView<HTMLDivElement>({ once: true, threshold: 0.05 });
 
   return (
-    <section ref={ref} className="relative py-32 lg:py-48 border-t border-line">
+    <section ref={ref} className="relative section-pad border-t border-line">
       <div className="container-site">
-        <div className={`reveal ${inView ? 'in-view' : ''} mb-24 lg:mb-36 max-w-4xl`}>
+        <div className={`reveal ${inView ? 'in-view' : ''} mb-10 lg:mb-14 max-w-4xl`}>
           <div className="text-eyebrow mb-6">Processus</div>
           <h2 className="text-display-sm uppercase">
             Trois étapes.<br />
@@ -47,7 +47,7 @@ export function HowItWorks() {
           </h2>
         </div>
 
-        <div className="space-y-20 lg:space-y-28">
+        <div className="space-y-10 lg:space-y-14">
           {steps.map((step, i) => (
             <div
               key={step.num}

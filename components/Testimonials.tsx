@@ -37,9 +37,9 @@ export function Testimonials() {
   const [ref, inView] = useInView<HTMLDivElement>({ once: true, threshold: 0.05 });
 
   return (
-    <section ref={ref} className="relative py-32 lg:py-48 border-t border-line">
+    <section ref={ref} className="relative section-pad border-t border-line">
       <div className="container-site">
-        <div className={`reveal ${inView ? 'in-view' : ''} mb-20 lg:mb-28 max-w-4xl`}>
+        <div className={`reveal ${inView ? 'in-view' : ''} mb-10 lg:mb-14 max-w-4xl`}>
           <div className="flex items-center gap-4 mb-6">
             <div className="text-eyebrow">Témoignages</div>
             <span className="text-[10px] uppercase tracking-[0.22em] text-ink/35 font-mono border border-line px-2 py-0.5">
@@ -52,7 +52,7 @@ export function Testimonials() {
           </h2>
         </div>
 
-        <div className="space-y-16 lg:space-y-20">
+        <div className="space-y-10 lg:space-y-12">
           {items.map((t, i) => (
             <div
               key={t.name}

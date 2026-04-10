@@ -1,100 +1,129 @@
 'use client';
 
-import { useInView } from '@/lib/useInView';
+import { useEffect, useRef, useState } from 'react';
+import { HeroScene } from './HeroScene';
+import { useSlideDeck } from './SlideDeck';
 
 export function Hero() {
-  const [ref, inView] = useInView<HTMLDivElement>({ once: true, threshold: 0.01 });
+  const progressRef = useRef(0);
+  const [mounted, setMounted] = useState(false);
+  const { active, next } = useSlideDeck();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // When this slide is active, drive the car along the route subtly
+  useEffect(() => {
+    if (active !== 0) return;
+    let raf = 0;
+    const t0 = performance.now();
+    const tick = () => {
+      const elapsed = (performance.now() - t0) / 1000;
+      // Soft auto-progression of the car (loops 0 → 1 over 12s)
+      progressRef.current = (elapsed / 12) % 1;
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [active]);
 
   return (
-    <section
-      id="top"
-      ref={ref}
-      className="relative min-h-[100svh] flex items-center overflow-hidden"
-    >
-      {/* Full-bleed background with Ken Burns */}
-      <div className="hero-bg" aria-hidden />
+    <div className="relative h-full w-full overflow-hidden">
+      <HeroScene progressRef={progressRef} />
 
-      {/* Hairline grid overlay (very subtle) */}
+      {/* Vignette */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.04]"
-        aria-hidden
+        className="absolute inset-0 pointer-events-none z-10"
         style={{
-          backgroundImage:
-            'linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)',
-          backgroundSize: '120px 120px',
-          maskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 80%)',
-          WebkitMaskImage: 'radial-gradient(ellipse 80% 60% at 50% 50%, black 20%, transparent 80%)',
+          background:
+            'radial-gradient(ellipse 90% 60% at 50% 50%, transparent 40%, rgba(0,0,0,0.55) 100%), linear-gradient(180deg, rgba(0,0,0,0.35) 0%, transparent 25%, transparent 60%, rgba(0,0,0,0.85) 100%)',
         }}
       />
 
-      {/* Content */}
-      <div className="container-site relative z-10 pt-36 pb-24">
-        <div className="grid lg:grid-cols-12 gap-8 items-end">
-          {/* Left — massive headline (8/12) */}
-          <div className={`lg:col-span-8 reveal ${inView ? 'in-view' : ''}`}>
-            <h1 className="text-display uppercase">
-              Conduire.<br />
-              Garder<br />
-              <span className="italic font-extralight">100 %</span>
-              <br />
-              des gains.
-            </h1>
-          </div>
+      <div className="absolute inset-0 z-20 flex flex-col">
+        <div className="pt-28 md:pt-36" />
 
-          {/* Right — subhead + CTAs (4/12) */}
-          <div className={`lg:col-span-4 reveal reveal-delay-2 ${inView ? 'in-view' : ''}`}>
-            <div className="max-w-sm lg:ml-auto">
-              <div className="hairline mb-8" />
-              <p className="text-subhead mb-10">
-                Le premier service de transport sans commission à Dakar.
-                Abonnement fixe de{' '}
-                <span className="font-mono text-ink whitespace-nowrap">18&thinsp;500&thinsp;FCFA</span>{' '}
-                par mois. Aucun prélèvement sur les courses.
-              </p>
+        <div className="flex-1 container-site flex items-center">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 w-full items-center">
+            <div className="lg:col-span-8">
+              <div
+                className={`text-eyebrow mb-6 md:mb-8 text-white/75 transition-all duration-1000 ${
+                  mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                }`}
+              >
+                Dakar · Sénégal · 2026
+              </div>
 
-              <div className="flex flex-col gap-3">
-                <a href="#inscription" className="btn-solid">
-                  Réserver une place
-                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
-                    <path d="M3 8h10m-4-4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </a>
-                <a href="#avantages" className="btn-outline">
-                  En savoir plus
-                </a>
+              <h1
+                className={`text-display uppercase transition-all duration-1000 delay-150 ${
+                  mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`}
+                style={{ textShadow: '0 8px 60px rgba(0,0,0,0.8)' }}
+              >
+                Conduire.
+                <br />
+                <span className="italic font-light">Garder</span>{' '}
+                <span className="whitespace-nowrap">100&nbsp;%</span>
+                <br />
+                des gains.
+              </h1>
+            </div>
+
+            <div className="lg:col-span-4">
+              <div
+                className={`max-w-sm lg:ml-auto transition-all duration-1000 delay-300 ${
+                  mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+                }`}
+              >
+                <div className="hairline mb-6 md:mb-8" />
+                <p className="text-[15px] md:text-[16px] leading-[1.65] font-light text-white/85 mb-6 md:mb-8">
+                  Le premier service de transport sans commission au Sénégal.
+                  Abonnement fixe{' '}
+                  <span className="font-mono text-white whitespace-nowrap">
+                    18&thinsp;500&thinsp;FCFA
+                  </span>{' '}
+                  par mois. Aucun prélèvement sur les courses.
+                </p>
+
+                <div className="flex flex-col gap-3">
+                  <button onClick={next} className="btn-solid">
+                    Découvrir
+                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
+                      <path
+                        d="M4 6l4 4 4-4"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom strip — meta info */}
-        <div className={`reveal reveal-delay-3 ${inView ? 'in-view' : ''} mt-24 lg:mt-32`}>
-          <div className="hairline mb-8" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6">
-            <MetaItem eyebrow="Localisation" value="Dakar, Sénégal" />
+        <div className="pb-24 md:pb-12 container-site">
+          <div className="hairline mb-5" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-6 text-white/80">
+            <MetaItem eyebrow="Localisation" value="Dakar" />
             <MetaItem eyebrow="Lancement" value="2026" />
-            <MetaItem eyebrow="Abonnement" value="18 500 FCFA / mois" mono />
+            <MetaItem eyebrow="Abonnement" value="18 500 FCFA" mono />
             <MetaItem eyebrow="Commission" value="0 %" mono />
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-ink/40 text-[10px] uppercase tracking-[0.3em] flex flex-col items-center gap-3">
-        <span>Scroll</span>
-        <svg width="10" height="20" viewBox="0 0 10 20" fill="none" aria-hidden>
-          <path d="M5 0v18m-4-4l4 4 4-4" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
-    </section>
+    </div>
   );
 }
 
 function MetaItem({ eyebrow, value, mono }: { eyebrow: string; value: string; mono?: boolean }) {
   return (
     <div>
-      <div className="text-eyebrow mb-2">{eyebrow}</div>
-      <div className={`text-[14px] md:text-[15px] text-ink font-medium ${mono ? 'font-mono' : ''}`}>
+      <div className="text-eyebrow mb-1 md:mb-2 text-white/60">{eyebrow}</div>
+      <div className={`text-[12px] md:text-[14px] text-white font-medium ${mono ? 'font-mono' : ''}`}>
         {value}
       </div>
     </div>

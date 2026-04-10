@@ -41,10 +41,10 @@ export function ValueProps() {
   const [ref, inView] = useInView<HTMLDivElement>({ once: true, threshold: 0.05 });
 
   return (
-    <section id="avantages" ref={ref} className="relative py-32 lg:py-48">
+    <section id="avantages" ref={ref} className="relative section-pad">
       <div className="container-site">
         {/* Section header */}
-        <div className={`reveal ${inView ? 'in-view' : ''} mb-24 lg:mb-36 max-w-4xl`}>
+        <div className={`reveal ${inView ? 'in-view' : ''} mb-10 lg:mb-14 max-w-4xl`}>
           <div className="text-eyebrow mb-6">Principes fondamentaux</div>
           <h2 className="text-display-sm uppercase">
             Trois promesses.<br />
@@ -53,7 +53,7 @@ export function ValueProps() {
         </div>
 
         {/* Props — editorial numbered list */}
-        <div className="space-y-20 lg:space-y-28">
+        <div className="space-y-10 lg:space-y-14">
           {props.map((p, i) => (
             <div
               key={p.title}

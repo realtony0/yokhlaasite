@@ -1,6 +1,7 @@
+'use client';
+
 import { Nav } from '@/components/Nav';
 import { Hero } from '@/components/Hero';
-import { ScarcityBar } from '@/components/ScarcityBar';
 import { ValueProps } from '@/components/ValueProps';
 import { Calculator } from '@/components/Calculator';
 import { Comparison } from '@/components/Comparison';
@@ -8,28 +9,49 @@ import { HowItWorks } from '@/components/HowItWorks';
 import { Testimonials } from '@/components/Testimonials';
 import { FAQ } from '@/components/FAQ';
 import { SignupForm } from '@/components/SignupForm';
-import { Footer } from '@/components/Footer';
-import { getWaitlistCount } from '@/lib/supabase';
+import { SlideDeck, Slide } from '@/components/SlideDeck';
 
-// Revalidate every 60 seconds to keep the counter fresh
-export const revalidate = 60;
+const SLIDE_IDS = [
+  'top',
+  'avantages',
+  'calculateur',
+  'comparaison',
+  'comment',
+  'temoignages',
+  'faq',
+  'inscription',
+] as const;
 
-export default async function HomePage() {
-  const signedUp = await getWaitlistCount();
-
+export default function HomePage() {
   return (
-    <main>
+    <>
       <Nav />
-      <Hero />
-      <ScarcityBar signedUp={signedUp} total={50} />
-      <ValueProps />
-      <Calculator />
-      <Comparison />
-      <HowItWorks />
-      <Testimonials />
-      <FAQ />
-      <SignupForm />
-      <Footer />
-    </main>
+      <SlideDeck slideIds={[...SLIDE_IDS]}>
+        <Slide id="top">
+          <Hero />
+        </Slide>
+        <Slide id="avantages">
+          <ValueProps />
+        </Slide>
+        <Slide id="calculateur">
+          <Calculator />
+        </Slide>
+        <Slide id="comparaison">
+          <Comparison />
+        </Slide>
+        <Slide id="comment">
+          <HowItWorks />
+        </Slide>
+        <Slide id="temoignages">
+          <Testimonials />
+        </Slide>
+        <Slide id="faq">
+          <FAQ />
+        </Slide>
+        <Slide id="inscription">
+          <SignupForm />
+        </Slide>
+      </SlideDeck>
+    </>
   );
 }

@@ -64,9 +64,9 @@ export function Calculator() {
 
   return (
     <>
-      <section id="calculateur" ref={ref} className="relative py-32 lg:py-48 border-t border-line">
+      <section id="calculateur" ref={ref} className="relative section-pad border-t border-line">
         <div className="container-site">
-          <div className={`reveal ${inView ? 'in-view' : ''} mb-20 lg:mb-28 max-w-4xl`}>
+          <div className={`reveal ${inView ? 'in-view' : ''} mb-10 lg:mb-14 max-w-4xl`}>
             <div className="text-eyebrow mb-6">Simulateur de revenus</div>
             <h2 className="text-display-sm uppercase">
               Combien de gain<br />

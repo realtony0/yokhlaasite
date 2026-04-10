@@ -72,7 +72,7 @@ export function SignupForm() {
 
   if (status === 'success') {
     return (
-      <section id="inscription" className="relative py-32 lg:py-48 border-t border-line">
+      <section id="inscription" className="relative section-pad border-t border-line">
         <div className="container-narrow text-center">
           <div className="text-eyebrow mb-6">Confirmation</div>
           <h2 className="text-display-sm uppercase mb-10">
@@ -93,7 +93,7 @@ export function SignupForm() {
   }
 
   return (
-    <section id="inscription" ref={ref} className="relative py-32 lg:py-48 border-t border-line">
+    <section id="inscription" ref={ref} className="relative section-pad border-t border-line">
       <div className="container-narrow relative">
         <div className={`reveal ${inView ? 'in-view' : ''} text-center mb-20 lg:mb-24`}>
           <div className="text-eyebrow mb-6">Inscription</div>

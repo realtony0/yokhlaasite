@@ -3,7 +3,7 @@ export function Footer() {
     <footer className="relative border-t border-line pt-24 lg:pt-32 pb-12">
       <div className="container-site">
         {/* Top — massive wordmark */}
-        <div className="mb-24 lg:mb-32">
+        <div className="mb-10 lg:mb-14">
           <div
             className="text-[clamp(4rem,16vw,14rem)] font-display font-extrabold leading-[0.82] tracking-tightest text-ink uppercase"
             style={{ letterSpacing: '-0.055em' }}

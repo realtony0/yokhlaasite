@@ -156,7 +156,7 @@ export function FAQ() {
   const [ref, inView] = useInView<HTMLDivElement>({ once: true, threshold: 0.02 });
 
   return (
-    <section id="faq" ref={ref} className="relative py-32 lg:py-48 border-t border-line">
+    <section id="faq" ref={ref} className="relative section-pad border-t border-line">
       <div className="container-site">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
           <div className={`lg:col-span-4 reveal ${inView ? 'in-view' : ''}`}>

@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta name="theme-color" content="#000000" />
       </head>
-      <body className="bg-bg text-ink font-body antialiased selection:bg-white selection:text-black">
+      <body className="bg-bg text-ink font-body antialiased selection:bg-white selection:text-black grain">
         {children}
       </body>
     </html>
