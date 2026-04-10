@@ -47,14 +47,6 @@ export function Hero() {
         <div className="flex-1 container-site flex items-center">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 w-full items-center">
             <div className="lg:col-span-8">
-              <div
-                className={`text-eyebrow mb-6 md:mb-8 text-white/75 transition-all duration-1000 ${
-                  mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-              >
-                Dakar · Sénégal · 2026
-              </div>
-
               <h1
                 className={`text-display uppercase transition-all duration-1000 delay-150 ${
                   mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
@@ -107,9 +99,7 @@ export function Hero() {
 
         <div className="pb-24 md:pb-12 container-site">
           <div className="hairline mb-5" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-4 gap-x-6 text-white/80">
-            <MetaItem eyebrow="Localisation" value="Dakar" />
-            <MetaItem eyebrow="Lancement" value="2026" />
+          <div className="grid grid-cols-2 gap-y-4 gap-x-6 text-white/80">
             <MetaItem eyebrow="Abonnement" value="18 500 FCFA" mono />
             <MetaItem eyebrow="Commission" value="0 %" mono />
           </div>

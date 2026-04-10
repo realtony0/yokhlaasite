@@ -73,11 +73,10 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-line flex flex-col md:flex-row md:items-center justify-between gap-4 text-[11px] uppercase tracking-[0.18em] text-ink/40 font-mono">
+        <div className="pt-8 border-t border-line text-[11px] uppercase tracking-[0.18em] text-ink/40 font-mono">
           <div>
-            © {new Date().getFullYear()} Yokh Laa SAS · Dakar, Sénégal · Tous droits réservés
+            © {new Date().getFullYear()} Yokh Laa SAS · Tous droits réservés
           </div>
-          <div>Lancement 2026</div>
         </div>
       </div>
     </footer>
