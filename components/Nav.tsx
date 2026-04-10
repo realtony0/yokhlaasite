@@ -36,7 +36,7 @@ export function Nav() {
             {[
               ['#avantages', 'Avantages'],
               ['#calculateur', 'Calculateur'],
-              ['#comparaison', 'Comparaison'],
+              ['#comment', 'Comment ça marche'],
               ['#faq', 'FAQ'],
             ].map(([href, label]) => (
               <a
@@ -87,7 +87,7 @@ export function Nav() {
             {[
               ['#avantages', 'Avantages'],
               ['#calculateur', 'Calculateur'],
-              ['#comparaison', 'Comparaison'],
+              ['#comment', 'Comment ça marche'],
               ['#faq', 'FAQ'],
               ['#inscription', 'Réserver une place'],
             ].map(([href, label]) => (
