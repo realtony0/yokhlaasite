@@ -3,7 +3,6 @@
 import { Nav } from '@/components/Nav';
 import { Hero } from '@/components/Hero';
 import { ValueProps } from '@/components/ValueProps';
-import { Calculator } from '@/components/Calculator';
 import { HowItWorks } from '@/components/HowItWorks';
 import { FAQ } from '@/components/FAQ';
 import { SignupForm } from '@/components/SignupForm';
@@ -12,7 +11,6 @@ import { SlideDeck, Slide } from '@/components/SlideDeck';
 const SLIDE_IDS = [
   'top',
   'avantages',
-  'calculateur',
   'comment',
   'faq',
   'inscription',
@@ -28,9 +26,6 @@ export default function HomePage() {
         </Slide>
         <Slide id="avantages">
           <ValueProps />
-        </Slide>
-        <Slide id="calculateur">
-          <Calculator />
         </Slide>
         <Slide id="comment">
           <HowItWorks />

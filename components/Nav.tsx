@@ -35,7 +35,6 @@ export function Nav() {
           <nav className="hidden lg:flex items-center gap-12 absolute left-1/2 -translate-x-1/2">
             {[
               ['#avantages', 'Avantages'],
-              ['#calculateur', 'Calculateur'],
               ['#comment', 'Comment ça marche'],
               ['#faq', 'FAQ'],
             ].map(([href, label]) => (
@@ -86,7 +85,6 @@ export function Nav() {
           <nav className="container-site pt-16 flex flex-col">
             {[
               ['#avantages', 'Avantages'],
-              ['#calculateur', 'Calculateur'],
               ['#comment', 'Comment ça marche'],
               ['#faq', 'FAQ'],
               ['#inscription', 'Réserver une place'],

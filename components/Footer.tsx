@@ -47,8 +47,7 @@ export function Footer() {
               title="Produit"
               links={[
                 ['#avantages', 'Avantages'],
-                ['#calculateur', 'Calculateur'],
-                ['#comparaison', 'Comparaison'],
+                ['#comment', 'Comment ça marche'],
                 ['#faq', 'FAQ'],
               ]}
             />
