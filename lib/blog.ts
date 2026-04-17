@@ -20,15 +20,15 @@ export const POSTS: BlogPost[] = [
     slug: 'combien-coute-trajet-dakar',
     title: 'Combien coûte un trajet VTC à Dakar en 2026 ?',
     excerpt:
-      "Tarifs réels constatés sur les principaux trajets de Dakar — Plateau, Almadies, aéroport, Mermoz. Comparaison Yokh Laa vs Yango vs Heetch.",
+      "Tarifs réels constatés sur les principaux trajets de Dakar — Plateau, Almadies, aéroport, Mermoz. Comprendre la vraie composition d'un tarif.",
     date: '2026-04-16',
     readMinutes: 5,
     category: 'Guide',
     keywords: [
       'prix VTC Dakar',
       'tarif taxi Dakar',
-      'Yango Dakar prix',
-      'Heetch Dakar',
+      'VTC Dakar prix',
+      'transport Dakar tarif',
       'Yokh Laa tarif',
     ],
   },

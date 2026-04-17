@@ -36,25 +36,17 @@ function PrixTrajetDakar() {
         dans la poche du passager).
       </p>
 
-      <ul>
-        <li>
-          <strong>Yokh Laa</strong> : 500 FCFA de base + 400 FCFA/km · 0 %
-          de commission
-        </li>
-        <li>
-          <strong>Yango</strong> : 500 FCFA de base + 500 FCFA/km · 25 %
-          de commission
-        </li>
-        <li>
-          <strong>Heetch</strong> : 600 FCFA de base + 475 FCFA/km · 20 %
-          de commission
-        </li>
-      </ul>
-
-      <h2>5 trajets types</h2>
       <p>
-        Tarifs constatés pour un trajet en heure normale (hors pointe), classe
-        standard, paiement direct :
+        Chez Yokh Laa, la formule est simple et publique : <strong>500 FCFA de
+        base + 400 FCFA par kilomètre</strong>, sans aucune commission. C&rsquo;est
+        le tarif que vous voyez avant de partir et que vous payez à
+        l&rsquo;arrivée.
+      </p>
+
+      <h2>5 trajets types à Dakar</h2>
+      <p>
+        Tarifs Yokh Laa constatés pour un trajet en heure normale (hors pointe),
+        classe standard, paiement direct :
       </p>
 
       <table>
@@ -62,9 +54,7 @@ function PrixTrajetDakar() {
           <tr>
             <th>Trajet</th>
             <th>Distance</th>
-            <th>Yokh Laa</th>
-            <th>Yango</th>
-            <th>Heetch</th>
+            <th>Tarif Yokh Laa</th>
           </tr>
         </thead>
         <tbody>
@@ -72,36 +62,26 @@ function PrixTrajetDakar() {
             <td>Plateau → Almadies</td>
             <td>12 km</td>
             <td><strong>5 300 F</strong></td>
-            <td>6 500 F</td>
-            <td>6 300 F</td>
           </tr>
           <tr>
             <td>Aéroport DSS → Plateau</td>
             <td>45 km</td>
             <td><strong>18 500 F</strong></td>
-            <td>23 000 F</td>
-            <td>22 000 F</td>
           </tr>
           <tr>
             <td>Mermoz → Parcelles Assainies</td>
             <td>14 km</td>
             <td><strong>6 100 F</strong></td>
-            <td>7 500 F</td>
-            <td>7 250 F</td>
           </tr>
           <tr>
             <td>Ouakam → VDN</td>
             <td>8 km</td>
             <td><strong>3 700 F</strong></td>
-            <td>4 500 F</td>
-            <td>4 400 F</td>
           </tr>
           <tr>
             <td>Yoff → Sacré-Cœur</td>
             <td>10 km</td>
             <td><strong>4 500 F</strong></td>
-            <td>5 500 F</td>
-            <td>5 350 F</td>
           </tr>
         </tbody>
       </table>
@@ -111,7 +91,7 @@ function PrixTrajetDakar() {
         surge et hors majorations nuit.
       </p>
 
-      <h2>Pourquoi Yokh Laa est moins cher</h2>
+      <h2>Pourquoi Yokh Laa peut être moins cher</h2>
       <p>
         La réponse tient en un mot : <strong>commission</strong>. Quand une
         plateforme prélève 20 à 25 % sur chaque course, le chauffeur doit
@@ -128,7 +108,7 @@ function PrixTrajetDakar() {
 
       <h2>Ce que vous pouvez faire</h2>
       <p>
-        Avant chaque course, comparez l&rsquo;estimation affichée par votre
+        Avant chaque course, regardez l&rsquo;estimation affichée par votre
         application et demandez-vous si le prix reflète réellement la distance.
         Un trajet de 10 km ne devrait jamais vous coûter 7 000 FCFA en heure
         normale.
