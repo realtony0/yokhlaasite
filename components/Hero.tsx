@@ -70,15 +70,12 @@ export function Hero() {
               >
                 <div className="hairline mb-4 md:mb-8" />
                 <p className="text-[14px] md:text-[16px] leading-[1.6] font-medium text-white/90 mb-5 md:mb-8">
-                  Le premier service de transport sans commission au Sénégal.{' '}
+                  Le premier service de transport sans commission au Sénégal.
+                  Des tarifs plus justes pour les passagers,{' '}
                   <span className="font-mono text-accent whitespace-nowrap">
-                    15&thinsp;000&thinsp;FCFA
+                    100&thinsp;%
                   </span>{' '}
-                  par mois à vie pour les 50 premiers chauffeurs (au lieu de{' '}
-                  <span className="font-mono whitespace-nowrap line-through text-white/40">
-                    20&thinsp;000&thinsp;FCFA
-                  </span>
-                  ).
+                  des gains pour les chauffeurs.
                 </p>
 
                 <div className="flex flex-col gap-3">
