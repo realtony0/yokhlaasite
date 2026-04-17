@@ -85,6 +85,35 @@ const items: QA[] = [
       </>
     ),
   },
+  {
+    q: 'Comment fonctionne le parrainage ?',
+    a: (
+      <>
+        Chaque chauffeur dispose d'un code unique à partager. Dès que{' '}
+        <strong className="text-accent font-medium">5 filleuls</strong> souscrivent
+        un abonnement actif, un{' '}
+        <strong className="text-ink font-medium">mois gratuit</strong> est
+        automatiquement ajouté à votre compte. Le système est{' '}
+        <strong className="text-ink font-medium">illimité</strong> : 10 filleuls = 2 mois
+        offerts, 15 filleuls = 3 mois, et ainsi de suite. Les mois offerts
+        s'accumulent et se cumulent avec votre tarif préférentiel.
+      </>
+    ),
+  },
+  {
+    q: 'Comment obtenir la réduction avec les autocollants ?',
+    a: (
+      <>
+        Il suffit d'apposer les autocollants officiels Yokh Laa sur votre
+        véhicule (fournis gratuitement lors de l'inscription) et d'en transmettre
+        une photo via l'application. Une fois validés, vous bénéficiez
+        automatiquement de{' '}
+        <strong className="text-accent font-medium">10 000&nbsp;FCFA de réduction</strong>{' '}
+        sur chaque mensualité, aussi longtemps que les autocollants restent
+        visibles. Un contrôle ponctuel peut être effectué sur le terrain.
+      </>
+    ),
+  },
 ];
 
 function AccordionItem({

@@ -1,10 +1,10 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 
 const SUPABASE_URL =
-  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://fpjyfctwjiivusbzxmrg.supabase.co';
+  process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://ltydghqylbqolrwbasjs.supabase.co';
 const SUPABASE_ANON_KEY =
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZwanlmY3R3amlpdnVzYnp4bXJnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzI2OTc4MzEsImV4cCI6MjA4ODI3MzgzMX0.3V3wVWPPHwyrBojrsWKt_PXwT6KSu4iHlyefHcf2H_M';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx0eWRnaHF5bGJxb2xyd2Jhc2pzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzYyNjMzNTAsImV4cCI6MjA5MTgzOTM1MH0.Or4KfJ1hBJpjreKs2Y2iS7MoRdYiure_m_M-B_ifjHU';
 
 let _client: SupabaseClient | null = null;
 

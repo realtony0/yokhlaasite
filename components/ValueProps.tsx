@@ -35,6 +35,22 @@ const props: Prop[] = [
     figure: '∞',
     figureSuffix: 'années',
   },
+  {
+    index: '04',
+    title: 'Parrainage',
+    description:
+      "Invitez d'autres chauffeurs à rejoindre Yokh Laa. À chaque fois que 5 de vos filleuls s'abonnent, vous recevez un mois d'abonnement offert. Pas de limite : cinq filleuls de plus, un mois de plus. Aucune condition cachée.",
+    figure: '5',
+    figureSuffix: 'filleuls = 1 mois offert',
+  },
+  {
+    index: '05',
+    title: 'Autocollants véhicule',
+    description:
+      "Affichez les autocollants Yokh Laa sur votre véhicule et bénéficiez de 10 000 FCFA de réduction chaque mois sur votre abonnement. Une contribution directe à la visibilité de la marque, récompensée sur votre mensualité.",
+    figure: '−10 000',
+    figureSuffix: 'FCFA / mois',
+  },
 ];
 
 export function ValueProps() {
@@ -47,7 +63,7 @@ export function ValueProps() {
         <div className={`reveal ${inView ? 'in-view' : ''} mb-10 lg:mb-14 max-w-4xl`}>
           <div className="text-eyebrow mb-6">Principes fondamentaux</div>
           <h2 className="text-display-sm uppercase">
-            Trois promesses.<br />
+            Cinq promesses.<br />
             <span className="italic font-extralight">Zéro exception.</span>
           </h2>
         </div>
