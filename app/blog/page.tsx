@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { POSTS, formatDate } from '@/lib/blog';
+import { JsonLd } from '@/components/JsonLd';
+
+const BASE_URL = 'https://yokhlaa.app';
 
 export const metadata: Metadata = {
   title: 'Blog — Yokh Laa',
@@ -23,8 +26,30 @@ export const metadata: Metadata = {
 export default function BlogIndex() {
   const sorted = [...POSTS].sort((a, b) => b.date.localeCompare(a.date));
 
+  const blogJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Blog Yokh Laa',
+    description: 'Guides et analyses sur le transport VTC à Dakar',
+    url: `${BASE_URL}/blog`,
+    inLanguage: 'fr-SN',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Yokh Laa',
+      url: BASE_URL,
+    },
+    blogPost: sorted.map((post) => ({
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.excerpt,
+      datePublished: post.date,
+      url: `${BASE_URL}/blog/${post.slug}`,
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-bg text-ink">
+      <JsonLd data={blogJsonLd} />
       {/* Minimal nav */}
       <header className="border-b border-line">
         <div className="container-site h-[84px] flex items-center justify-between">

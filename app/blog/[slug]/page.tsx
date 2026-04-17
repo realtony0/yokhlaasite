@@ -3,6 +3,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getPost, POSTS, formatDate } from '@/lib/blog';
 import { getArticleContent } from './articles';
+import { JsonLd } from '@/components/JsonLd';
+
+const BASE_URL = 'https://yokhlaa.app';
 
 interface PageProps {
   params: { slug: string };
@@ -42,8 +45,47 @@ export default function ArticlePage({ params }: PageProps) {
   const content = getArticleContent(post.slug);
   const related = POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    inLanguage: 'fr-SN',
+    keywords: post.keywords.join(', '),
+    articleSection: post.category,
+    wordCount: post.readMinutes * 200,
+    author: {
+      '@type': 'Organization',
+      name: 'Yokh Laa',
+      url: BASE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Yokh Laa',
+      logo: { '@type': 'ImageObject', url: `${BASE_URL}/icon.svg` },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${BASE_URL}/blog/${post.slug}`,
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: BASE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${BASE_URL}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `${BASE_URL}/blog/${post.slug}` },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-bg text-ink">
+      <JsonLd data={articleJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <header className="border-b border-line">
         <div className="container-site h-[84px] flex items-center justify-between">
           <Link
