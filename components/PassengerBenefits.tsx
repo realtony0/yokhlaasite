@@ -1,6 +1,7 @@
 'use client';
 
 import { useInView } from '@/lib/useInView';
+import { PassengerCTA } from './PassengerCTA';
 
 interface Benefit {
   index: string;
@@ -66,7 +67,7 @@ export function PassengerBenefits() {
         </div>
 
         {/* Benefits — editorial numbered list */}
-        <div className="space-y-10 lg:space-y-14">
+        <div className="space-y-10 lg:space-y-14 mb-16 lg:mb-20">
           {benefits.map((b, i) => (
             <div
               key={b.title}
@@ -101,6 +102,11 @@ export function PassengerBenefits() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Passenger CTA — waitlist launch notification */}
+        <div className={`reveal reveal-delay-5 ${inView ? 'in-view' : ''}`}>
+          <PassengerCTA />
         </div>
       </div>
     </section>

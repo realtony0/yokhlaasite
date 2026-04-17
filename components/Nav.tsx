@@ -60,6 +60,7 @@ export function Nav() {
               ['#avantages', 'Chauffeurs'],
               ['#comment', 'Comment ça marche'],
               ['#faq', 'FAQ'],
+              ['/blog', 'Blog'],
             ].map(([href, label]) => (
               <a
                 key={href}
@@ -111,6 +112,7 @@ export function Nav() {
               ['#avantages', 'Chauffeurs'],
               ['#comment', 'Comment ça marche'],
               ['#faq', 'FAQ'],
+              ['/blog', 'Blog'],
               ['#inscription', 'M\u2019inscrire'],
             ].map(([href, label]) => (
               <a
