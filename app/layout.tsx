@@ -4,7 +4,7 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Yokh Laa — Conduire. Garder 100 % des gains.',
   description:
-    "Le premier service de transport sans commission à Dakar. 15 000 FCFA par mois à vie pour les 50 premiers chauffeurs (au lieu de 20 000). Premier mois offert.",
+    "Le premier service de transport sans commission à Dakar. Abonnement 25 000 FCFA par mois pour les chauffeurs (jusqu'à 15 000 FCFA avec les autocollants). Premier mois offert aux 50 premiers.",
   keywords: [
     'Yokh Laa',
     'Dakar',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Yokh Laa — Conduire. Garder 100 % des gains.',
     description:
-      "Transport sans commission à Dakar. 15 000 FCFA par mois à vie pour les 50 premiers chauffeurs. Premier mois offert.",
+      "Transport sans commission à Dakar. Abonnement 25 000 FCFA par mois pour les chauffeurs. Premier mois offert aux 50 premiers.",
     locale: 'fr_SN',
     type: 'website',
     siteName: 'Yokh Laa',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Yokh Laa — Conduire. Garder 100 % des gains.',
-    description: 'Transport sans commission à Dakar. 15 000 FCFA/mois à vie pour les 50 premiers.',
+    description: 'Transport sans commission à Dakar. Abonnement 25 000 FCFA/mois pour les chauffeurs.',
   },
   robots: { index: true, follow: true },
 };

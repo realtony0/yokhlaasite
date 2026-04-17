@@ -106,9 +106,10 @@ export function SignupForm() {
             <span className="italic font-extralight">une place.</span>
           </h2>
           <p className="text-subhead mt-8 max-w-lg mx-auto">
-            Premier mois offert · Tarif à vie à{' '}
-            <span className="text-accent font-medium">15 000 FCFA</span>{' '}
-            par mois (au lieu de 20 000). Deux minutes d&rsquo;inscription.
+            Premier mois offert · Abonnement{' '}
+            <span className="text-accent font-medium">25 000 FCFA</span>{' '}
+            par mois, jusqu&rsquo;à <span className="text-accent font-medium">15 000 FCFA</span>{' '}
+            avec les autocollants. Deux minutes d&rsquo;inscription.
           </p>
         </div>
 

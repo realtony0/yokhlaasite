@@ -13,11 +13,13 @@ const items: QA[] = [
     q: "Comment fonctionne l'abonnement mensuel ?",
     a: (
       <>
-        Le prix normal est de{' '}
-        <strong className="text-ink font-medium">20&nbsp;000&nbsp;FCFA</strong>{' '}
-        par mois, mais les 50 premiers chauffeurs inscrits paient{' '}
-        <strong className="text-accent font-medium">15&nbsp;000&nbsp;FCFA</strong>{' '}
-        à vie. Paiement en début de mois via Wave, Orange Money ou Free Money.
+        L'abonnement est de{' '}
+        <strong className="text-accent font-medium">25&nbsp;000&nbsp;FCFA</strong>{' '}
+        par mois, sans engagement. Avec les autocollants (−10&nbsp;000&nbsp;FCFA)
+        et le parrainage (1 mois offert tous les 5 filleuls), votre mensualité
+        réelle peut descendre à{' '}
+        <strong className="text-ink font-medium">15&nbsp;000&nbsp;FCFA</strong>{' '}
+        voire à zéro. Paiement en début de mois via Wave, Orange Money ou Free Money.
         Aucune commission, aucun frais caché. Résiliation possible à tout
         moment — l'abonnement prend fin à l'issue du mois en cours, sans
         engagement ni pénalité.
@@ -76,12 +78,11 @@ const items: QA[] = [
     a: (
       <>
         L'objectif est de démarrer avec une équipe restreinte que nous pouvons
-        accompagner individuellement : formation, assistance, retours
-        produit. Les 50 premiers chauffeurs bénéficient du{' '}
+        accompagner individuellement : formation, assistance, retours produit.
+        Les 50 premiers chauffeurs bénéficient du{' '}
         <strong className="text-ink font-medium">premier mois offert</strong> et du{' '}
-        <strong className="text-accent font-medium">tarif à vie de 15&nbsp;000&nbsp;FCFA</strong>
-        {' '}au lieu de 20&nbsp;000&nbsp;FCFA, même lors des futures révisions
-        tarifaires.
+        <strong className="text-accent font-medium">tarif bloqué à 25&nbsp;000&nbsp;FCFA</strong>,
+        même lors des futures révisions tarifaires.
       </>
     ),
   },

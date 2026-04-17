@@ -103,7 +103,7 @@ export function Hero() {
         <div className="pb-24 md:pb-12 container-site hidden md:block">
           <div className="hairline mb-5" />
           <div className="grid grid-cols-2 gap-y-4 gap-x-6 text-white/80">
-            <MetaItem eyebrow="50 premiers" value="15 000 FCFA" mono />
+            <MetaItem eyebrow="Abonnement" value="25 000 FCFA" mono />
             <MetaItem eyebrow="Commission" value="0 %" mono />
           </div>
         </div>
