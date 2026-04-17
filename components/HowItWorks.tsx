@@ -14,7 +14,7 @@ const steps: Step[] = [
     num: '01',
     title: 'Inscription',
     description:
-      "Remplissez le formulaire avec vos coordonnées et les informations de votre véhicule. Deux minutes suffisent.",
+      "Remplissez le formulaire avec vos coordonnées et les informations de votre véhicule. Inscription en 2 minutes.",
     eta: '02 min',
   },
   {

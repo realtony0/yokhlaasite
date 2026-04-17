@@ -109,7 +109,7 @@ export function SignupForm() {
             Premier mois offert · Abonnement{' '}
             <span className="text-accent font-medium">25 000 FCFA</span>{' '}
             par mois, jusqu&rsquo;à <span className="text-accent font-medium">15 000 FCFA</span>{' '}
-            avec les autocollants. Deux minutes d&rsquo;inscription.
+            avec les autocollants. Inscription en 2 minutes.
           </p>
         </div>
 
